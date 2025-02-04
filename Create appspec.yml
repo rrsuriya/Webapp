@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html/index.html  # Destination directory for your EC2 instance
+
+# Optional: you can define hooks if you need to perform any additional setup after deployment
+hooks:
+  AfterInstall:
+    - location: scripts/install_dependencies.sh  # Only needed if you have dependencies to install
+      runas: root
