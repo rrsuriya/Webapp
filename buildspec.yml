@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      # We don't need a specific runtime for static HTML, but this is an example if you need one (e.g., for Node.js)
+      nodejs: 14
+  build:
+    commands:
+      - echo "Building the web application"
+  post_build:
+    commands:
+      - echo "Build completed"
+
+artifacts:
+  files:
+    - '**/*'  # Include all files for deployment
+  base-directory: '.'  # The root of the repository, since it's a simple static site
